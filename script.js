@@ -10,7 +10,8 @@ Object.assign(section0.style, {
     flexDirection: "column",
     alignItems: "center",
     gap: "4rem",
-    marginTop: "2rem",
+    marginTop: "1rem",
+    paddingBottom: '5rem'
 });
 
 /* ---------- TITLE ---------- */
