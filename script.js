@@ -110,9 +110,10 @@ section1.addEventListener("click", () => {
         sec1.innerHTML = `
             <a href="https://nrega.dord.gov.in/MGNREGA_new/Nrega_home.aspx" target="_blank">Official Site (MNREGA)</a>
             <p style="color:red;font-weight:bold">Admin Logins</p>
-            <a href="#" target="_blank">Program Officer</a>
-            <a href="#" target="_blank">Block Administration</a>
-            <a href="#" target="_blank">Gram Panchayat</a>
+            <a href="https://nregade2.nic.in/netnrega/Login.aspx?&level=HomePO&state_code=31" target="_blank">Program Officer</a>
+            <a href="https://nregade2.nic.in/netnrega/login.aspx?&level=HomePODBA&state_code=31" target="_blank">Block Administration</a>
+            <a href="https://nregade2.nic.in/Netnrega/Login.aspx?&level=HomeBP&state_code=31" target="_blank">Kshetra Panchayat</a>
+            <a href="https://nregade2.nic.in/Netnrega/Login.aspx?&level=HomeGP&state_code=31" target="_blank">Gram Panchayat</a>
             <p style="color:red;font-weight:bold">FTO Signatory</p>
             <a href="https://mnregaweb5.nic.in/Netnrega/FTO/Login.aspx?&level=HomeAC&state_code=31" target="_blank">1st Signatory (Accountant)</a>
             <a href="https://mnregaweb5.nic.in/Netnrega/FTO/Login.aspx?&level=HomeWL&state_code=31" target="_blank">2nd Signatory (BDO)</a>
