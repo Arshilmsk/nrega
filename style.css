@@ -11,15 +11,7 @@ html, body{
 
 main{
     height: 100%;
-    width: 100%;
-    background-color: rgb(240, 247, 253);
-    color: black;
+    width: 100%;    
+    /* background-color: rgb(240, 247, 253);
+    color: black; */
 }
-
-.sec{
-    background-color: white;
-    padding: 1rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-

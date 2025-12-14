@@ -9,8 +9,8 @@ Object.assign(section0.style, {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    gap: "5rem",
-    marginTop: "2rem"
+    gap: "4rem",
+    marginTop: "2rem",
 });
 
 /* ---------- TITLE ---------- */
@@ -23,7 +23,6 @@ Object.assign(title.style, {
     fontFamily: "Arial, sans-serif",
     color: "rgb(22, 77, 105)",
     fontSize: "2.5rem",
-    marginTop: "2rem"
 });
 
 /* ---------- BOX CONTAINER ---------- */
@@ -33,9 +32,9 @@ section0.appendChild(boxContainer);
 Object.assign(boxContainer.style, {
     display: "flex",
     gap: "2rem",
-    alignItems: "flex-start",
     flexWrap: "wrap",
-    justifyContent: "center"
+    justifyContent: "center",
+    alignItems: "flex-start",
 });
 
 /* ---------- COMMON BOX STYLE ---------- */
@@ -43,29 +42,37 @@ function boxStyle(box) {
     Object.assign(box.style, {
         backgroundColor: "rgba(111, 167, 195, 1)",
         color: "white",
-        padding: "1rem",
-        width: "auto",
-        borderRadius: "5px",
+        padding: "1rem 1.5rem",
+        borderRadius: "8px",
         fontFamily: "Arial, sans-serif",
-        cursor: "pointer"
-        
+        cursor: "pointer",
+        minWidth: "220px",
+        textAlign: "center",
+        transition: "transform 0.2s ease",
+    });
+
+    box.addEventListener("mouseover", () => {
+        box.style.transform = "translateY(-4px)";
+    });
+
+    box.addEventListener("mouseout", () => {
+        box.style.transform = "translateY(0)";
     });
 }
 
 /* ---------- LINK STYLE FUNCTION ---------- */
 function styleLinks(container) {
-    const links = container.querySelectorAll("a");
-    links.forEach(link => {
+    container.querySelectorAll("a").forEach(link => {
         Object.assign(link.style, {
-            color: "black",
+            color: "#000",
             textDecoration: "none",
             padding: "0.3rem 0.5rem",
-            fontSize: "1rem"
+            fontSize: "0.95rem",
+            borderRadius: "4px",
         });
 
         link.addEventListener("mouseover", () => {
             link.style.backgroundColor = "yellow";
-            link.style.borderRadius = "3px";
         });
 
         link.addEventListener("mouseout", () => {
@@ -74,8 +81,22 @@ function styleLinks(container) {
     });
 }
 
+/* ---------- SEC CARD STYLE (YOUR CSS ADDED) ---------- */
+function secCardStyle(card) {
+    Object.assign(card.style, {
+        backgroundColor: "white",
+        padding: "1rem",
+        borderRadius: "1rem",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+        display: "flex",
+        flexDirection: "column",
+        gap: "0.8rem",
+        marginTop: "1rem",
+    });
+}
+
 /* ---------- SECTION 1 ---------- */
-let section1 = document.createElement("div");
+const section1 = document.createElement("div");
 section1.textContent = "NREGA Logins";
 boxStyle(section1);
 boxContainer.appendChild(section1);
@@ -87,28 +108,21 @@ section1.addEventListener("click", () => {
         const sec1 = document.createElement("div");
         sec1.className = "sec";
         sec1.innerHTML = `
-            <a href="https://nrega.dord.gov.in/MGNREGA_new/Nrega_home.aspx">Official Site (MNREGA)</a>
-            <p style="color:red">Admin Logins</p>
-            <a href="https://nregade2.nic.in/netnrega/Login.aspx?&level=HomePO&state_code=31">Program Officer (Data Entry)</a>
-            <a href="https://nregade2.nic.in/netnrega/login.aspx?&level=HomePODBA&state_code=31">Block Administration</a>
-            <a href="https://nregade2.nic.in/Netnrega/Login.aspx?&level=HomeBP&state_code=31">Kshetra Panchyat</a>
-            <a href="https://nregade2.nic.in/Netnrega/Login.aspx?&level=HomeGP&state_code=31">Gram Panchayat</a>
-            <a href="https://mnregaweb5.nic.in/Netnrega/FTO/Login.aspx?&level=HomeAC&state_code=31">1st Signatory (Accountant)</a>
-            <a href="https://mnregaweb5.nic.in/Netnrega/FTO/Login.aspx?&level=HomeWL&state_code=31">2nd Signatory (BDO)</a>
-
-            <p style="color:red">E-MB</p>
-            <a href="http://nregade2.nic.in/netnrega/Login.aspx?&level=HomeGPMB&state_code=31">eMB Fill (TA/JE)</a>
-            <a href="http://nregade2.nic.in/netnrega/Login.aspx?&level=HomeMB&state_code=31">eMB Approval (AE/JE)</a>
+            <a href="https://nrega.dord.gov.in/MGNREGA_new/Nrega_home.aspx" target="_blank">Official Site (MNREGA)</a>
+            <p style="color:red;font-weight:bold">Admin Logins</p>
+            <a href="#" target="_blank">Program Officer</a>
+            <a href="#" target="_blank">Block Administration</a>
+            <a href="#" target="_blank">Gram Panchayat</a>
+            <p style="color:red;font-weight:bold">FTO Signatory</p>
+            <a href="https://mnregaweb5.nic.in/Netnrega/FTO/Login.aspx?&level=HomeAC&state_code=31" target="_blank">1st Signatory (Accountant)</a>
+            <a href="https://mnregaweb5.nic.in/Netnrega/FTO/Login.aspx?&level=HomeWL&state_code=31" target="_blank">2nd Signatory (BDO)</a>
+            <p style="color:red;font-weight:bold">E-MB</p>
+            <a href="https://nregade2.nic.in/netnrega/Login.aspx?&level=HomeGPMB&state_code=31" target="_blank">eMB Fill (TA/JE)</a>
+            <a href="https://nregade2.nic.in/netnrega/Login.aspx?&level=HomePOMB&state_code=31" target="_blank">eMB Approval (JE/AE)</a>
         `;
         section1.appendChild(sec1);
 
-        Object.assign(sec1.style, {
-            display: "flex",
-            flexDirection: "column",
-            gap: "0.8rem",
-            marginTop: "1rem"
-        });
-
+        secCardStyle(sec1);
         styleLinks(sec1);
         open1 = true;
     } else {
@@ -118,8 +132,8 @@ section1.addEventListener("click", () => {
 });
 
 /* ---------- SECTION 2 ---------- */
-let section2 = document.createElement("div");
-section2.textContent = "Important Links";
+const section2 = document.createElement("div");
+section2.textContent = "Awas Plus Login";
 boxStyle(section2);
 boxContainer.appendChild(section2);
 
@@ -130,20 +144,14 @@ section2.addEventListener("click", () => {
         const sec2 = document.createElement("div");
         sec2.className = "sec";
         sec2.innerHTML = `
-            <a href="#">NREGA Official Website</a>
-            <a href="#">NREGA Dashboard</a>
-            <a href="#">NREGA Guidelines</a>
-            <a href="#">NREGA Reports</a>
+            <a href="https://pmayg.dord.gov.in/netiayHome/home.aspx" target="_blank">Awas Official</a>
+            <a href="https://pmayg.dord.gov.in/netiay/masterlogin.aspx" target="_blank">MIS Data Entry</a>
+            <a href="https://dashboard.pmayg.dord.gov.in/netiay/masterlogin.aspx" target="_blank">Reports</a>
+            <a href="https://rhfms.pmayg.dord.gov.in/netiay/masterlogin.aspx" target="_blank">1st/2nd FTO</a>
         `;
         section2.appendChild(sec2);
 
-        Object.assign(sec2.style, {
-            display: "flex",
-            flexDirection: "column",
-            gap: "0.8rem",
-            marginTop: "1rem"
-        });
-
+        secCardStyle(sec2);
         styleLinks(sec2);
         open2 = true;
     } else {
@@ -153,8 +161,8 @@ section2.addEventListener("click", () => {
 });
 
 /* ---------- SECTION 3 ---------- */
-let section3 = document.createElement("div");
-section3.textContent = "Help & Support";
+const section3 = document.createElement("div");
+section3.textContent = "Samaj Kalyan Login";
 boxStyle(section3);
 boxContainer.appendChild(section3);
 
@@ -165,19 +173,14 @@ section3.addEventListener("click", () => {
         const sec3 = document.createElement("div");
         sec3.className = "sec";
         sec3.innerHTML = `
-            <a href="#">NREGA FAQ</a>
-            <a href="#">Contact Support</a>
-            <a href="#">Feedback</a>
+            <a href="https://mksy.up.gov.in/women_welfare/officer/officerlogin.php" target="_blank">Kanya Sumangla</a>
+            <a href="https://sspybdosdm.upsdc.gov.in/" target="_blank">Pension</a>
+            <a href="https://shadianudan.upsdc.gov.in/adminlogin.aspx" target="_blank">Shadi Anudan</a>
+            <a href="https://cmsvy.upsdc.gov.in/" target="_blank">CM Samuhik Vivah</a>
         `;
         section3.appendChild(sec3);
 
-        Object.assign(sec3.style, {
-            display: "flex",
-            flexDirection: "column",
-            gap: "0.8rem",
-            marginTop: "1rem"
-        });
-
+        secCardStyle(sec3);
         styleLinks(sec3);
         open3 = true;
     } else {
