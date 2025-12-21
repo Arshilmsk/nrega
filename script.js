@@ -204,7 +204,7 @@ section4.addEventListener("click", () => {
         const sec4 = document.createElement("div"); 
         sec4.className = "sec";
         sec4.innerHTML = `
-            <a href="#" target="_blank">Secure UP Official</a>
+            <a href="https://secure.dord.gov.in/securev2/" target="_blank">Secure UP Official</a>
         `;
         section4.appendChild(sec4); 
         secCardStyle(sec4);
