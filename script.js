@@ -190,3 +190,30 @@ section3.addEventListener("click", () => {
         open3 = false;
     }
 });
+
+//---------------------- END OF SCRIPT ---------- */
+
+/* ---------- SECTION 4 ---------- */
+const section4 = document.createElement("div");
+section4.textContent = "Other Links";
+boxStyle(section4);
+boxContainer.appendChild(section4);
+let open4 = false;
+section4.addEventListener("click", () => {
+    if (!open4) {
+        const sec4 = document.createElement("div"); 
+        sec4.className = "sec";
+        sec4.innerHTML = `
+            <a href="#" target="_blank">Secure UP Official</a>
+        `;
+        section4.appendChild(sec4); 
+        secCardStyle(sec4);
+        styleLinks(sec4);
+        open4 = true;
+    }
+    else {
+        section4.querySelector(".sec").remove(); 
+        open4 = false;
+    }
+});
+/* ---------- END OF SCRIPT ---------- */
