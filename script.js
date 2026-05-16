@@ -115,12 +115,16 @@ section1.addEventListener("click", () => {
             <a href="https://nregade4.dord.gov.in/netnrega/login.aspx?&level=HomePODBA&state_code=31" target="_blank">Block Administration</a>
             <a href="https://nregade4.dord.gov.in/Netnrega/Login.aspx?&level=HomeBP&state_code=31" target="_blank">Kshetra Panchayat</a>
             <a href="https://nregade4.dord.gov.in/Netnrega/Login.aspx?&level=HomeGP&state_code=31" target="_blank">Gram Panchayat</a>
+            <a href="https://nregade4.dord.gov.in/netnrega/Login.aspx?district_name=HAMIRPUR&state_code=31&district_code=3141&fin_year=2026-2027&level=HomeDPC&Digest=Dc54/ofrzenI06d3VptO/w" target="_blank">DPC Login (District)</a>
             <p style="color:red;font-weight:bold">FTO Signatory</p>
             <a href="https://mnregaweb5.nic.in/Netnrega/FTO/Login.aspx?&level=HomeAC&state_code=31" target="_blank">1st Signatory (Accountant)</a>
             <a href="https://mnregaweb5.nic.in/Netnrega/FTO/Login.aspx?&level=HomeWL&state_code=31" target="_blank">2nd Signatory (BDO)</a>
             <p style="color:red;font-weight:bold">E-MB</p>
             <a href="https://nregade4.dord.gov.in/netnrega/Login.aspx?&level=HomeGPMB&state_code=31" target="_blank">eMB Fill (TA/JE)</a>
             <a href="https://nregade4.dord.gov.in/netnrega/Login.aspx?&level=HomePOMB&state_code=31" target="_blank">eMB Approval (JE/AE)</a>
+            <p style="color:red;font-weight:bold">Bhuvan Login</p>
+            <a href="https://bhuvan-app2.nrsc.gov.in/mgnrega/mgnrega_phase2.php" target="_blank"> Block Login/GP Login</a>
+            <a href="https://bhuvan-cas1.nrsc.gov.in/cas/login?service=https%3A%2F%2Fbhuvan-app2.nrsc.gov.in%2Fplanner_v3%2Fnrega_mse%2Fmse_verify.php" target="_blank">GP Approval</a>
         `;
         section1.appendChild(sec1);
 
@@ -195,7 +199,7 @@ section3.addEventListener("click", () => {
 
 /* ---------- SECTION 4 ---------- */
 const section4 = document.createElement("div");
-section4.textContent = "Other Links";
+section4.textContent = "Secure Portal";
 boxStyle(section4);
 boxContainer.appendChild(section4);
 let open4 = false;
@@ -214,6 +218,41 @@ section4.addEventListener("click", () => {
     else {
         section4.querySelector(".sec").remove(); 
         open4 = false;
+    }
+});
+/* ---------- END OF SCRIPT ---------- */
+
+/* ---------- SECTION 5 ---------- */
+const section5 = document.createElement("div");
+section5.textContent = "MNREGA Reports";
+boxStyle(section5);
+boxContainer.appendChild(section5);
+let open5 = false;
+section5.addEventListener("click", () => {
+    if (!open5) {
+        const sec5 = document.createElement("div"); 
+        sec5.className = "sec";
+        sec5.innerHTML = `
+            <a href="https://nreganarep.nic.in/netnrega/MISreport4.aspx" target="_blank">National Report</a>
+            <a href="https://mnregaweb2.dord.gov.in/netnrega/homestciti.aspx?state_code=31&state_name=UTTAR%20PRADESH&lflag=eng&labels=labels" target="_blank">State Report</a>
+            <a href="https://mnregaweb4.dord.gov.in/netnrega/FTO/FTOReport.aspx?page=s&mode=B&flg=W&state_name=UTTAR%20PRADESH&state_code=31&fin_year=2026-2027&dstyp=B&source=national&Digest=0VOKNzYUpiAeELqHU+CbVQ" target="_blank">R8.1.1 - FTO 2026-2027</a>
+            <a href="https://mnregaweb4.dord.gov.in/netnrega/writereaddata/citizen_out/fundstreportMtemp_Out31_2627_.html" target="_blank">R7.1.1- Financial Statement</a>
+            <a href="https://mnregaweb4.dord.gov.in/netnrega/state_html/JC_Ver_report.aspx?page=S&lflag=eng&state_name=UTTAR%20PRADESH&state_code=31&fin_year=2025-2026&source=national&Digest=BYQz84B6FlB4PkhCTU0seQ" target="_blank">R26.4 Report on Verification of Job Cards</a>
+            <a href="https://mnregaweb4.dord.gov.in/netnregarep/AdhaarStatus.aspx?page=S&short_name=&state_name=UTTAR%20PRADESH&state_code=31&fin_year=2026-2027&source=national&Digest=vQN2+yMtAgUa9dY2HoR/9g" target="_blank">R1.1.9- Aadhaar Authentication Status(KYC)</a>
+            <a href="https://nreganarep.nic.in/netnrega/dpc_sms_new.aspx?lflag=eng&page=s&short_name=UP&state_name=UTTAR%20PRADESH&state_code=31&fin_year=2026-2027&source=national&Digest=awq9yFC9y44oQGD+LnyCQw" target="_blank">R6.9- MGNREGS daily status as <br> per e-muster issued</a>
+            <a href="https://mnregaweb4.dord.gov.in/netnrega/Paymentstatus.aspx?page=S&lflag=eng&rb_mode=&state_name=UTTAR%20PRADESH&state_code=31&fin_year=2026-2027&source=national&Digest=o9nakMJcYLFRvLN2z+4WLA" target="_blank">R14.4 Status of Timely Payment Monitoring System</a>
+            <a href="https://nreganarep.nic.in/netnrega/takenup_compwrk.aspx?page=s&lflag=eng&state_name=UTTAR%20PRADESH&state_code=31&fin_year=2026-2027&source=national&Digest=WGelDcsX1MD2kh1bHq7Z+Q" target="_blank">R6.2 Percentage of works completed since inception in MIS</a>
+            <a href="https://nreganarep.nic.in/netnrega/dynamic_work_details.aspx?page=S&lflag=eng&state_name=UTTAR%20PRADESH&state_code=31&fin_year=2026-2027&source=national&Digest=hBKhW28yeNfGm7fhLU+8nw" target="_blank">R6.12 Dynamic Report for Monitoring and details of works</a>
+            <a href="https://mnregaweb4.dord.gov.in/netnrega/Yuktdhara_rpt.aspx?page=S&short_name=UP&state_name=UTTAR%20PRADESH&state_code=31&fin_year=2026-2027&source=national&Digest=6RedZNz4fn/fIsX/ZUuC+A" target="_blank">R34.1 Yuktdhara Monitoring</a>
+        `;
+        section5.appendChild(sec5); 
+        secCardStyle(sec5);
+        styleLinks(sec5);
+        open5 = true;
+    }
+    else {
+        section5.querySelector(".sec").remove(); 
+        open5 = false;
     }
 });
 /* ---------- END OF SCRIPT ---------- */
